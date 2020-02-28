@@ -1,0 +1,33 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "build": "lerna exec --parallel -- babel --root-mode upward src -d lib --ignore **/*.story.js,**/*.spec.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "devDependencies": {
+    "@polymer/test-fixture": "^4.0.2",
+    "@storybook/web-components": "^5.3.13",
+    "chai": "^4.2.0",
+    "lerna": "^3.20.2",
+    "mocha": "^7.1.0",
+    "wct-mocha": "^1.0.1"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@storybook/polymer": "^5.3.13",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.7",
+    "lit-element": "^2.2.1",
+    "polymer": "^0.5.0",
+    "webpack": "^4.41.6"
+  }
+}
